@@ -47,3 +47,9 @@ Go to locolhost/phpmyadmin:
 
         Feel free to raise any queries by mail or connect with me on linkedin at
         https://www.linkedin.com/in/dushyant-shyam-ranjit/ 
+
+
+
+
+
+I have added a few screenshots of my final result in the SCREENSHOTS folder.
