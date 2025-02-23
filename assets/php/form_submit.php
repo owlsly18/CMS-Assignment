@@ -42,18 +42,17 @@ if ($stmt->execute([$name, $email, $number, $message])) {
     $mail -> Subject = "Your message has been received.";
     $mail -> Body= "This is your copy of your message:\n Name: $name\nEmail: $email\nNumber: $number\nMessage:\n$message";
     if($mail -> send()){
-        echo"Messege sent successfully";
+        echo "<script>alert('Message sent successfully!');</script>";
     }else{
-        echo"Message could'nt be sent, Error: ". $mail->ErrorInfo;
+        echo "<script>alert('Message couldn\'t be sent. Error: " . addslashes($mail->ErrorInfo) . "');</script>";
     }
     // $to = $email;
     // $subject = "Your message has been received.";
     // $body = "This is your copy of your message:\n Name: $name\nEmail: $email\nNumber: $number\nMessage:\n$message";
     // $headers = "From: $email";
     // mail($to, $subject, $body, $headers);
-
-    echo json_encode(["success" => true, "message" => "Message sent successfully!"]);
+    echo json_encode(["Your message has been sent successfully!"]);
 } else {
-    echo json_encode(["success" => false, "message" => "Database error."]);
+    echo json_encode(["Failure to send message: Database error."]);
 }
 ?>

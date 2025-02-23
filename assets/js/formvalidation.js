@@ -36,11 +36,10 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
         method: "POST",
         body: new URLSearchParams({ name, email, number, message })
     })
-    .then(response => response.json())
+    .then(response => response.text())
     .then(data => {
-        alert(data.message);
+        console.log("Server Response:", data);
+        alert(data);
     })
-    .catch(() => {
-        alert("An error occurred.");
-    });
+    .catch(error => console.error("Error:", error));
 });
