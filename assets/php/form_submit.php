@@ -32,12 +32,12 @@ if ($stmt->execute([$name, $email, $number, $message])) {
     $mail -> isSMTP();
     $mail -> Host= "smtp.gmail.com";
     $mail -> SMTPAuth= true;
-    $mail -> Username= "rdushyantshyam@gmail.com";
-    $mail -> Password= "fqhh rrtq pvdy hnba";
+    $mail -> Username= "myemail@gmail.com"; //replace with your username
+    $mail -> Password= "mypa sswo rdmy pass"; //replace with your password
     $mail -> SMTPSecure= PHPMailer::ENCRYPTION_STARTTLS;
     $mail -> Port= 587;
     $mail -> setFrom("test@dsr.com", "DSR");
-    // $mail -> addAddress("dushyant.ranjit@gmail.com", "DUSHYANT");
+    // $mail -> addAddress("receiver.mail@gmail.com", "RECEIVER");
     $mail-> addAddress($email, $name); 
     $mail -> Subject = "Your message has been received.";
     $mail -> Body= "This is your copy of your message:\n Name: $name\nEmail: $email\nNumber: $number\nMessage:\n$message";
